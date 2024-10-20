@@ -1,0 +1,10 @@
+# remove unnecessary files from image
+.git
+/.devcontainer
+/.github
+/kubernetes
+.gitignore
+LICENSE.md
+privacy.html
+README.md
+sonar-project.properties
