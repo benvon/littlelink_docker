@@ -1,7 +1,7 @@
-version: "3"
+
 services: 
   little-link:
-    image: davisdre/littlelink:latest
+    build: . 
     container_name: littlelink-server
     ports: 
-      - 80:80
+      - 8080:8080
