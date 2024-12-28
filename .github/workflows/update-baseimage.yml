@@ -1,0 +1,38 @@
+name: Check docker image
+
+on:
+  schedule:
+    - cron:  '0 4 * * *'
+  workflow_dispatch:
+
+jobs:
+  update_baseimage:
+    runs-on: ubuntu-24.04
+    steps:
+      - name: Check if update available
+        id: check
+        uses: lucacome/docker-image-update-checker@v2.0.0
+        with:
+          base-image: ghcr.io/nginxinc/nginx-unprivileged:1-bookworm
+          image: ghcr.io/benvon/littlelink_docker:latest
+
+      - name: Check result
+        run: |
+            echo "Needs updating: ${{ steps.check.outputs.needs-updating }}"
+
+      - name: Version tag on main (dry run)
+        id: taggerDryRun
+        uses: anothrNick/github-tag-action@1.36.0
+        env:
+            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+            WITH_V: true
+            DRY_RUN: true
+        if: steps.check.outputs.needs-updating == 'true'
+
+      - name: Minor version bump on main
+        id: tagger
+        uses: anothrNick/github-tag-action@1.36.0
+        env:
+            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+            WITH_V: true
+        if: github.ref == 'refs/heads/main' && steps.check.outputs.needs-updating == 'true'

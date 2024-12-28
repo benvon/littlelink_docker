@@ -6,9 +6,9 @@ on:
 
 
 jobs:
-  build:
+  sonar_analysis:
     name: Build and analyze
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
 
     steps:
       - uses: actions/checkout@v4
