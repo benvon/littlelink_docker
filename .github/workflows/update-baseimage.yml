@@ -6,8 +6,8 @@ on:
   workflow_dispatch:
 
 jobs:
-  docker:
-    runs-on: ubuntu-latest
+  update_baseimage:
+    runs-on: ubuntu-24.04
     steps:
       - name: Check if update available
         id: check
