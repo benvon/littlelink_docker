@@ -20,19 +20,27 @@ jobs:
         run: |
             echo "Needs updating: ${{ steps.check.outputs.needs-updating }}"
 
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        if: steps.check.outputs.needs-updating == 'true'
+        
       - name: Version tag on main (dry run)
         id: taggerDryRun
-        uses: anothrNick/github-tag-action@1.36.0
+        uses: anothrNick/github-tag-action@1.71.0
         env:
             GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
             WITH_V: true
             DRY_RUN: true
+            GIT_API_TAGGING: true
+            RELEASE_BRANCHES: main
         if: steps.check.outputs.needs-updating == 'true'
 
       - name: Minor version bump on main
         id: tagger
-        uses: anothrNick/github-tag-action@1.36.0
+        uses: anothrNick/github-tag-action@1.71.0
         env:
             GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
             WITH_V: true
+            GIT_API_TAGGING: true
+            RELEASE_BRANCHES: main
         if: github.ref == 'refs/heads/main' && steps.check.outputs.needs-updating == 'true'
