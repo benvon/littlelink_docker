@@ -1,118 +1,36 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html class="theme-auto" lang="en">
 <head>
-  <!-- Analytics -->
-  <script defer data-domain="benvon.net" src="https://plausible.io/js/plausible.js"></script>
-
-  <!-- Page Information
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Ben Vaughan</title>
   <meta name="description" content="Find Ben online!">
   <meta name="author" content="Ben Vaughan">
-
-  <!-- Mobile Specific Metas
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-
-  <!-- FONT
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800&display=swap" rel="stylesheet">
-
-
-  <!-- CSS
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <link rel="stylesheet" href="css/normalize.css">
-
-  <!-- Themes:
-         Auto:   css/skeleton-auto.css
-         Light:  css/skeleton-light.css
-         Dark:   css/skeleton-dark.css
-  -->
-  <link rel="stylesheet" href="css/skeleton-auto.css">
-
-  <link rel="stylesheet" href="css/brands.css">
-
-
-  <!-- Favicon
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#121212" media="(prefers-color-scheme: dark)">
   <link rel="icon" type="image/png" href="images/bv_sport_head_64.png">
-
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/brands.css">
+  <script defer data-domain="benvon.net" src="https://plausible.io/js/plausible.js"></script>
 </head>
-
 <body>
-
-  <!-- Primary Page Layout
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <div class="container">
-    <div class="row">
-      <div class="column" style="margin-top: 10%">
-
-        <!-- 
-
-          ## Getting Started with LittleLink
-
-          This page has been built with every pre-designed button available in LittleLink by default. You can rearrange and delete as needed.
-
-          You can add your own brand or others brands you may need in the `css/brands.css` file. 
-
-          You can add custom icons to `images/icons/...`. It is recommended to use a 24x24 .SVG.
-
-          Edit the "Your Image Here" section to add your own personal branding, like a picture of yourself or your brand logo!
-
-          Edit the "Title" section to change the page heading. You can use something like your name, your social handle, or your brand name.
-
-          Edit the "Short Bio" section tell users about yourself or your brand.
-
-        -->
-
-        <!-- Your Image Here -->
-        <img src="images/bv_sport_head_64.png" srcset="images/bv_sport_head_128.png 2x" alt="Ben Wearing Headband">
-
-        <!-- Title -->
+    <div class="column">
+      <main>
+        <img class="avatar avatar--none" src="images/bv_sport_head_64.png" srcset="images/bv_sport_head_128.png 2x" alt="Ben Wearing Headband" width="64" height="64" fetchpriority="high">
         <h1>Ben Vaughan</h1>
-
-        <!-- Short Bio -->
         <p>All the cool things Ben does online.</p>
-
-        <!-- Github -->
-        <a class="button button-github" href="https://github.com/benvon" target="_blank" rel="noopener"><img class="icon"
-            src="images/icons/github.svg" alt="GitHub Logo">GitHub</a>
-        <br>
-
-        <!-- Mastodon -->
-        <a class="button button-mastodon" href="https://vaughan.social/@benvon" target="_blank" rel="me"><img class="icon"
-            src="images/icons/mastodon.svg" alt="Mastodon Logo">Mastodon</a>
-        <br>
-
-        <!-- LinkedIn -->
-        <a class="button button-linked" href="https://www.linkedin.com/in/benvon/" target="_blank" rel="noopener"><img class="icon"
-            src="images/icons/linkedin.svg" alt="LinkedIn Logo">LinkedIn</a>
-        <br>
-
-        <!-- Email -->
-        <a class="button button-default" href="mailto:ben@benvon.net"><img class="icon"
-            src="images/icons/email.svg" alt="Email Icon">ben@benvon.net</a>
-        <br>
-
-        <!-- Credly -->
-        <a class="button button-default" href="https://www.credly.com/users/ben-vaughan.b1571c06" target="_blank" rel="noopener"><img class="icon"
-            src="images/icons/web.svg" alt="">Credly</a>
-        <br>
-
-        <!-- Web -->
-        <a class="button button-web" href="https://www.benvon.net/" target="_blank" rel="noopener"><img class="icon"
-            src="images/icons/web.svg" alt="Web Logo">Website</a>
-        <br>
-
-        <br>
-      </div>
+        <nav class="button-stack" aria-label="Find Ben online">
+          <a class="button button-github" href="https://github.com/benvon" target="_blank" rel="noopener"><img class="icon" src="images/icons/github.svg" alt="" aria-hidden="true">GitHub</a>
+          <a class="button button-mastodon" href="https://vaughan.social/@benvon" target="_blank" rel="me noopener"><img class="icon" src="images/icons/mastodon.svg" alt="" aria-hidden="true">Mastodon</a>
+          <a class="button button-linked" href="https://www.linkedin.com/in/benvon/" target="_blank" rel="noopener"><img class="icon" src="images/icons/linkedin.svg" alt="" aria-hidden="true">LinkedIn</a>
+          <a class="button button-default" href="mailto:ben@benvon.net"><img class="icon" src="images/icons/generic-email.svg" alt="" aria-hidden="true">ben@benvon.net</a>
+          <a class="button button-default" href="https://www.credly.com/users/ben-vaughan.b1571c06" target="_blank" rel="noopener"><img class="icon" src="images/icons/generic-website.svg" alt="" aria-hidden="true">Credly</a>
+          <a class="button button-default" href="https://www.benvon.net/" target="_blank" rel="noopener"><img class="icon" src="images/icons/generic-website.svg" alt="" aria-hidden="true">Website</a>
+        </nav>
+      </main>
     </div>
   </div>
-
-  <!-- End Document
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
 </body>
-
 </html>
