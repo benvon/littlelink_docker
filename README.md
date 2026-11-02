@@ -37,7 +37,7 @@ cosign verify ghcr.io/benvon/littlelink_docker@sha256:<digest> \
   --certificate-oidc-issuer=https://token.actions.githubusercontent.com
 ```
 
-Production deployment is managed separately. Legacy app manifests remain temporarily for migration review; tunnel, namespace, and ingress files have separate ownership and are outside this work.
+Production deployment and image promotion are managed separately from this public source repository. The superseded app Deployment, Service, and HPA manifests have been retired. Remaining tunnel, namespace, and ingress files have separate ownership; do not apply, move, or clean them up as part of site maintenance.
 
 ## Additional checks
 
